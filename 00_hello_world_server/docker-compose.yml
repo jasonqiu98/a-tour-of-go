@@ -1,0 +1,11 @@
+version: '1.0'
+services:
+  workspace:
+    image: golang:1.19
+    container_name: mygosh
+    volumes:
+      - ./hello.go:/go/src/hello.go
+    ports:
+      - "8092:8080"
+    # go run /go/src/{go-file-name}
+    command: go run /go/src/hello.go
